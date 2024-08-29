@@ -1,3 +1,52 @@
+##############################################################################
+# Added by 2i2c
+#
+# To clean up ignored files you can use: git clean -Xfd
+# Delete untracked files (-X), with required confirmation (-f), recursively (-d).
+
+# This section handles sensitive content that is or isn't encrypted in our repo.
+#
+# Ignore files (but not directories) with secret in their name
+*secret*
+!*secret*/
+# Don't ignore enc- prefixed files
+!enc-*
+# Don't ignore Helm chart templates with secret in their name as
+# they are not supposed to contain sensitive content but can often
+# have secret in their name.
+!**/templates/**/*secret*.yaml
+
+# Ignore the .json version of our Helm chart's schema files so we only version
+# control the .yaml file that we use to generate the .json file.
+values.schema.json
+
+# Ignore helm chart generated outputs
+Chart.lock
+**/charts/*.tgz
+
+.env-*
+
+# Documentation build assets
+docs/tmp
+docs/reference/terraform.md
+docs/_static/hub-stats.json
+docs/_static/hub-table.json
+docs/_static/hub-options-table.json
+
+# Common editor config
+.vscode
+
+# Don't check-in YAML files for eksctl config generated from jsonnet files
+**.eksctl.yaml
+
+# Don't version control any terraform state
+**.terraform.lock.hcl
+
+##############################################################################
+# Python.gitignore below - Add exceptions above for easier maintenance
+# https://github.com/github/gitignore/blob/main/Python.gitignore
+# --------------------------------------------------------------------
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -101,17 +150,7 @@ ipython_config.py
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
 #poetry.lock
 
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
-.pdm.toml
-.pdm-python
-.pdm-build/
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
 # Celery stuff
@@ -155,8 +194,11 @@ dmypy.json
 cython_debug/
 
 # PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  JetBrains specific template is maintainted in a separate JetBrains.gitignore that can
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# osx
+.DS_Store
