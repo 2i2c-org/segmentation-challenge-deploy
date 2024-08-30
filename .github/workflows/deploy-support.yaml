@@ -1,0 +1,31 @@
+name: Deploy the support chart
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - helm-charts/support/**
+
+env:
+  TERM: xterm
+  # This may not be required any more, and it may depend on the kubectl version
+  # we use etc as well. For now, we have it added to avoid issues.
+  USE_GKE_GCLOUD_AUTH_PLUGIN: "True"
+
+jobs:
+  upgrade-support-chart:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup deploy
+        uses: ./.github/actions/setup-deploy
+        with:
+          GCP_KMS_DECRYPTOR_KEY: ${{ secrets.GCP_KMS_DECRYPTOR_KEY }}
+
+      - name: Upgrade support chart
+        if: matrix.jobs.upgrade_support
+        run: |
+          python3 deployer.py support --namespace=support

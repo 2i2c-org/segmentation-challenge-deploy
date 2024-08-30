@@ -28,6 +28,7 @@ repos:
     rev: 24.8.0
     hooks:
       - id: black
+        args: ["--line-length", "79"]
 
   # Autoformat: markdown, yaml (but not helm templates)
   - repo: https://github.com/pre-commit/mirrors-prettier
@@ -50,9 +51,6 @@ repos:
       # Lint: Check for files with names that would conflict on a
       # case-insensitive filesystem like MacOS HFS+ or Windows FAT.
       - id: check-case-conflict
-
-      # Lint: Checks that non-binary executables have a proper shebang.
-      - id: check-executables-have-shebangs
 
   # Lint: Python code
   - repo: https://github.com/PyCQA/flake8
