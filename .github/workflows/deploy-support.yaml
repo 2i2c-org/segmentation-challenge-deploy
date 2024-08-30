@@ -25,6 +25,10 @@ jobs:
         with:
           GCP_KMS_DECRYPTOR_KEY: ${{ secrets.GCP_KMS_DECRYPTOR_KEY }}
 
+      - name: Build helm dep
+        run: |
+          helm dependency update helm-charts/support
+
       - name: Upgrade support chart
         run: |
           python3 deployer.py support --namespace=support
