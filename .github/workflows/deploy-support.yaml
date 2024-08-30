@@ -3,7 +3,7 @@ name: Deploy the support chart
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - helm-charts/support/**
 
