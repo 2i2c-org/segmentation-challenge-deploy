@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - helm-charts/support/**
+  workflow_dispatch:
 
 env:
   TERM: xterm
@@ -16,7 +17,6 @@ env:
 jobs:
   upgrade-support-chart:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -26,6 +26,5 @@ jobs:
           GCP_KMS_DECRYPTOR_KEY: ${{ secrets.GCP_KMS_DECRYPTOR_KEY }}
 
       - name: Upgrade support chart
-        if: matrix.jobs.upgrade_support
         run: |
           python3 deployer.py support --namespace=support
