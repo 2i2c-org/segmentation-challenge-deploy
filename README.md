@@ -15,6 +15,7 @@ python3 deployer.py support --namespace=support
 2. Install the app chart:
 
 - For staging:
+
   ```bash
   python3 deployer.py app --namespace=staging --values_file staging.values.yaml
   ```
