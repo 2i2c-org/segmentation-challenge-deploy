@@ -5,3 +5,5 @@ unnamed:
 
   ingress:
     enabled: true
+    hosts: 
+      - cellmapchallenge.2i2c.cloud

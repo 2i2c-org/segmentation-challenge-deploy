@@ -1,0 +1,9 @@
+unnamed:
+  service:
+    type: ClusterIP
+    port: 8000
+
+  ingress:
+    enabled: true
+    hosts: 
+      - staging.cellmapchallenge.2i2c.cloud
