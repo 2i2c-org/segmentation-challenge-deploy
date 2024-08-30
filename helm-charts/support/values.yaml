@@ -1,5 +1,0 @@
-# ingress-nginx:
-#   controller:
-#     scope:
-#       namespace:
-#         - staging
