@@ -3,6 +3,7 @@ name: support
 description: Cluster wide dependencies for deployed apps
 version: 0.1.0
 
+# testing gha
 dependencies:
   # ingress-nginx for a k8s Ingress resource controller that routes traffic from
   # a single IP entrypoint to various services exposed via k8s Ingress resources
