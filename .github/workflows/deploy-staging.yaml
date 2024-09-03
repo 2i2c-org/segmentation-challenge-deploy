@@ -1,11 +1,12 @@
-name: Deploy the support chart
+name: Deploy the staging app
 
 on:
   push:
     branches:
       - main
     paths:
-      - helm-charts/support/**
+      - helm-charts/app/Chart.yaml
+      - helm-charts/apps/staging.values.yaml
   workflow_dispatch:
 
 jobs:
@@ -21,8 +22,8 @@ jobs:
 
       - name: Update helm dependencies
         run: |
-          helm dependency update helm-charts/support
+          helm dependency update helm-charts/app
 
-      - name: Deploy the support chart
+      - name: Deploy staging app
         run: |
-          python3 deployer.py support --namespace=support
+          python3 deployer.py app --namespace=staging --values_file staging.values.yaml
