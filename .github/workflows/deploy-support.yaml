@@ -25,7 +25,7 @@ jobs:
         with:
           GCP_KMS_DECRYPTOR_KEY: ${{ secrets.GCP_KMS_DECRYPTOR_KEY }}
 
-      - name: Build helm dep
+      - name: Update helm dependencies
         run: |
           helm dependency update helm-charts/support
 
