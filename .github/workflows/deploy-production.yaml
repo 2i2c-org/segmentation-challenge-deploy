@@ -1,0 +1,29 @@
+name: Deploy the app in production
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - helm-charts/app/Chart.yaml
+      - helm-charts/apps/prod.values.yaml
+  workflow_dispatch:
+
+jobs:
+  upgrade-support-chart:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup deploy
+        uses: ./.github/actions/setup-deploy
+        with:
+          GCP_KMS_DECRYPTOR_KEY: ${{ secrets.GCP_KMS_DECRYPTOR_KEY }}
+
+      - name: Update helm dependencies
+        run: |
+          helm dependency update helm-charts/app
+
+      - name: Deploy prod app
+        run: |
+          python3 deployer.py app --namespace=prod --values_file prod.values.yaml
