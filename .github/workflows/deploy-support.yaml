@@ -8,12 +8,6 @@ on:
       - helm-charts/support/**
   workflow_dispatch:
 
-env:
-  TERM: xterm
-  # This may not be required any more, and it may depend on the kubectl version
-  # we use etc as well. For now, we have it added to avoid issues.
-  USE_GKE_GCLOUD_AUTH_PLUGIN: "True"
-
 jobs:
   upgrade-support-chart:
     runs-on: ubuntu-latest
