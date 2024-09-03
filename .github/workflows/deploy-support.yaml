@@ -23,6 +23,6 @@ jobs:
         run: |
           helm dependency update helm-charts/support
 
-      - name: Upgrade support chart
+      - name: Deploy the support chart
         run: |
           python3 deployer.py support --namespace=support
