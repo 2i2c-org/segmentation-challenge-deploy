@@ -7,3 +7,9 @@ unnamed:
     enabled: true
     hosts:
       - cellmapchallenge.2i2c.cloud
+
+  yamlSettings:
+    enabled: true
+    overrides:
+      ALLOWED_HOSTS:
+        - cellmapchallenge.2i2c.cloud
