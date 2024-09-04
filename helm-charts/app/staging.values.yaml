@@ -7,3 +7,10 @@ unnamed:
     enabled: true
     hosts:
       - staging.cellmapchallenge.2i2c.cloud
+
+  yamlSettings:
+    enabled: true
+    overrides:
+      ALLOWED_HOSTS:
+        - staging.cellmapchallenge.2i2c.cloud
+      DEBUG: True
