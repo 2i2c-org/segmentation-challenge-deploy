@@ -14,3 +14,8 @@ unnamed:
       ALLOWED_HOSTS:
         - staging.cellmapchallenge.2i2c.cloud
       DEBUG: True
+
+  # The nfs share /db/prod was created manually
+  nfs:
+    pv:
+      serverIP: 10.12.39.58
