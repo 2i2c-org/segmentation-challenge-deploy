@@ -13,3 +13,8 @@ unnamed:
     overrides:
       ALLOWED_HOSTS:
         - cellmapchallenge.2i2c.cloud
+
+  # The nfs share /db/prod was created manually
+  nfs:
+    pv:
+      serverIP: 10.12.39.58
