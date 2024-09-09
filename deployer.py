@@ -64,8 +64,8 @@ def get_decrypted_file(original_filepath):
     if not os.path.isfile(original_filepath):
         raise FileNotFoundError(
             f"""
-            File Not Found at following location! Have you checked it's the correct path?
-            {original_filepath}
+            File Not Found at following location! Have you checked it's the
+            correct path? {original_filepath}
         """
         )
     filename = os.path.basename(original_filepath)
@@ -86,9 +86,11 @@ def get_decrypted_file(original_filepath):
 
         if "sops" not in content:
             raise KeyError(
-                "Expecting to find the `sops` key in this encrypted file - but it "
-                + "wasn't found! Please regenerate the secret in case it has been "
-                + "checked into version control and leaked!"
+                """
+                Expecting to find the `sops` key in this encrypted file - but
+                it wasn't found! Please regenerate the secret in case it has
+                been checked into version control and leaked!
+                """
             )
 
         # If file has a `sops` key, we assume it's sops encrypted
@@ -99,8 +101,8 @@ def get_decrypted_file(original_filepath):
             yield f.name
 
     else:
-        # The file does not have "secret" in its name, therefore does not need to be
-        # decrypted. Yield the original filepath unchanged.
+        # The file does not have "secret" in its name, therefore does not need
+        # to be decrypted. Yield the original filepath unchanged.
         yield original_filepath
 
 
