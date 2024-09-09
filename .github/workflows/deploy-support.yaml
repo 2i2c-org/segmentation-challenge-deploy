@@ -23,6 +23,9 @@ jobs:
         run: |
           helm dependency update helm-charts/support
 
+      - name: Install deployer deps
+        run: pip install -r requirements.txt
+
       - name: Deploy the support chart
         run: |
           python3 deployer.py support --namespace=support
