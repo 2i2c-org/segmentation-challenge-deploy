@@ -29,4 +29,4 @@ jobs:
 
       - name: Deploy prod app
         run: |
-          python3 deployer.py app --namespace=prod --values_file prod.values.yaml
+          python3 deployer.py app --namespace=prod
