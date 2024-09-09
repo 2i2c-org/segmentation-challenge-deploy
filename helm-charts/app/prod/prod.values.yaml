@@ -8,6 +8,9 @@ unnamed:
     hosts:
       - cellmapchallenge.2i2c.cloud
 
+  adminUsers:
+    - GeorgianaElena
+
   yamlSettings:
     enabled: true
     overrides:
