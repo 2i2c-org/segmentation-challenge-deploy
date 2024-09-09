@@ -24,6 +24,9 @@ jobs:
         run: |
           helm dependency update helm-charts/app
 
+      - name: Install deployer deps
+        run: pip install -r requirements.txt
+
       - name: Deploy staging app
         run: |
           python3 deployer.py app --namespace=staging --values_file staging.values.yaml

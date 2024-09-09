@@ -17,12 +17,12 @@ python3 deployer.py support --namespace=support
 - For staging:
 
   ```bash
-  python3 deployer.py app --namespace=staging --values_file staging.values.yaml
+  python3 deployer.py app --namespace=staging
   ```
 
 - For production:
   ```bash
-  python3 deployer.py app --namespace=prod --values_file prod.values.yaml
+  python3 deployer.py app --namespace=prod
   ```
 
 ### Debugging

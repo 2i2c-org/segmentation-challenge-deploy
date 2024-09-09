@@ -1,1 +1,3 @@
-sops
+# This file represents the needs for the deployer script to function,
+
+ruamel.yaml==0.18.*
