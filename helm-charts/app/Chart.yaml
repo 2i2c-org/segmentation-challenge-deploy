@@ -7,7 +7,7 @@ appVersion: "1.0"
 
 dependencies:
   - name: unnamed
-    version: 0.0.1-0.dev.git.117.h8f71f83
+    version: 0.0.1-0.dev.git.125.h2270463
     repository: https://2i2c.org/unnamed-thingity-thing/
   # ingress-nginx for a k8s Ingress resource controller that routes traffic from
   # a single IP entrypoint to various services exposed via k8s Ingress resources
