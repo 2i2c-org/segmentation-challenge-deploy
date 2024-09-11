@@ -28,3 +28,4 @@ unnamed:
             client_id: Ov23liNajAJLgDlanrUb
             redirect_uri: http://staging.cellmapchallenge.2i2c.cloud/accounts/github/login/callback
           VERIFIED_EMAIL: True
+      CHALLENGE_STATE: "RUNNING"
