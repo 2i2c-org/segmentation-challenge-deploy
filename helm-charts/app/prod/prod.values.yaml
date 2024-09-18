@@ -15,6 +15,7 @@ unnamed:
 
   adminUsers:
     - GeorgianaElena
+    - yuvipanda
 
   yamlSettings:
     enabled: true
