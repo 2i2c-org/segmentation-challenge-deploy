@@ -30,3 +30,5 @@ unnamed:
             redirect_uri: http://cellmapchallenge.2i2c.cloud/accounts/github/login/callback/
           VERIFIED_EMAIL: True
       CHALLENGE_STATE: "NOT_STARTED"
+      FOOTER: |
+        <script defer data-domain="cellmapchallenge.2i2c.cloud" src="https://plausible.io/js/script.js"></script>
