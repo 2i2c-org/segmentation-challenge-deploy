@@ -5,8 +5,15 @@ unnamed:
 
   ingress:
     enabled: true
+    annotations:
+      nginx.ingress.kubernetes.io/proxy-body-size: 256m
+      cert-manager.io/cluster-issuer: letsencrypt-prod
     hosts:
       - staging.cellmapchallenge.2i2c.cloud
+    tls:
+      - secretName: https-auto-tls
+        hosts:
+          - staging.cellmapchallenge.2i2c.cloud
 
   # The nfs share /db/staging was created manually
   nfs:
