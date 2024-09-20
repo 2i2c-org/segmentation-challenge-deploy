@@ -173,8 +173,10 @@ def main():
         "helm-charts/enc-deploy-credentials.secret.json"
     )
     if args.type == "support":
-        values_files = None
         helm_chart = Path(__file__).parent.joinpath("helm-charts/support")
+        values_files = [
+            helm_chart.joinpath(f"{args.namespace}.values.yaml"),
+        ]
     elif args.type == "app":
         helm_chart = Path(__file__).parent.joinpath("helm-charts/app")
         values_files = [

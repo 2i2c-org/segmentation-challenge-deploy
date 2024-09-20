@@ -9,7 +9,7 @@ You can install the chart by running the `deployer` script like:
 1. Install the support chart:
 
 ```bash
-python3 deployer.py support --namespace=support
+python3 deployer.py support
 ```
 
 2. Install the app chart:
