@@ -1,8 +1,4 @@
 unnamed:
-  service:
-    type: ClusterIP
-    port: 8000
-
   ingress:
     enabled: true
     annotations:
@@ -15,10 +11,9 @@ unnamed:
         hosts:
           - staging.cellmapchallenge.2i2c.cloud
 
-  # The nfs share /db/staging was created manually
-  nfs:
-    pv:
-      serverIP: 10.12.39.58
+
+  pvc:
+    storageClassName: premium-rwo
 
   adminUsers:
     - GeorgianaElena
@@ -28,6 +23,8 @@ unnamed:
     overrides:
       ALLOWED_HOSTS:
         - staging.cellmapchallenge.2i2c.cloud
+      CSRF_TRUSTED_ORIGINS:
+        - https://staging.cellmapchallenge.2i2c.cloud
       DEBUG: True
       SOCIALACCOUNT_PROVIDERS:
         github:
