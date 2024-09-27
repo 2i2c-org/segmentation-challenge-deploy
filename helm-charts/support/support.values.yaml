@@ -7,3 +7,11 @@ cert-manager:
     # This option makes it so that the "helm.sh/resource-policy": keep
     # annotation is added to the CRD.
     keep: true
+
+ingress-nginx:
+  controller:
+    resources:
+      requests:
+        # Overprovision requests, just in case
+        cpu: 200m
+        memory: 512Mi
