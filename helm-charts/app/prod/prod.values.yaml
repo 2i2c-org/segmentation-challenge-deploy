@@ -46,6 +46,8 @@ unnamed:
         - https://cellmapchallenge.2i2c.cloud
         - https://cellmapchallenge.janelia.org
       DEBUG: True
+      # Required per https://stackoverflow.com/a/54786577, because we're behind an nginx proxy
+      ACCOUNT_DEFAULT_HTTP_PROTOCOL: 'https'
       SOCIALACCOUNT_PROVIDERS:
         github:
           APP:
