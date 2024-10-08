@@ -56,7 +56,7 @@ unnamed:
       SITE_NAME: CellMap Challenge
       SITE_LOGO_URL: /file/header-logo
       SITE_PAGE_HEADER_IMAGE_URL: "/file/home-hero-image"
-      SITE_FOOTER_HTML: |-
+      SITE_FOOTER_HTML: |
         <style>
           footer, footer a {
             color: #838286;
