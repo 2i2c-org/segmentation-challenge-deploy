@@ -180,6 +180,7 @@ def main():
     elif args.type == "app":
         helm_chart = Path(__file__).parent.joinpath("helm-charts/app")
         values_files = [
+            helm_chart.joinpath("common.values.yaml"),
             helm_chart.joinpath(
                 f"{args.namespace}/{args.namespace}.values.yaml"
             ),

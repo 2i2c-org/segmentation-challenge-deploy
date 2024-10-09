@@ -1,9 +1,5 @@
 unnamed:
   ingress:
-    enabled: true
-    annotations:
-      nginx.ingress.kubernetes.io/proxy-body-size: 256m
-      cert-manager.io/cluster-issuer: letsencrypt-prod
     hosts:
       - staging.cellmapchallenge.2i2c.cloud
     tls:
@@ -11,14 +7,7 @@ unnamed:
         hosts:
           - staging.cellmapchallenge.2i2c.cloud
 
-  pvc:
-    storageClassName: premium-rwo
-
-  adminUsers:
-    - GeorgianaElena
-
   yamlSettings:
-    enabled: true
     overrides:
       ALLOWED_HOSTS:
         - staging.cellmapchallenge.2i2c.cloud
@@ -32,58 +21,3 @@ unnamed:
             redirect_uri: http://staging.cellmapchallenge.2i2c.cloud/accounts/github/login/callback
           VERIFIED_EMAIL: True
       CHALLENGE_STATE: "RUNNING"
-      SITE_NAME: CellMap Challenge
-      SITE_LOGO_URL: /file/header-logo
-      SITE_PAGE_HEADER_IMAGE_URL: "/file/home-hero-image"
-      SITE_FOOTER_HTML: |-
-        <style>
-          footer, footer a {
-            color: #838286;
-            text-decoration: none
-          }
-        </style>
-        <footer class="text-center break-bootstrap-container py-4 text-uppercase">
-          <div class="container">
-            <div class="d-flex flex-column gap-3">
-              <div>
-                <a href="https://www.janelia.org/project-team/cellmap">
-                  <img src="/file/footer-logo-cellmap" height="48px" width="auto" />
-                </a>
-                <a href="https://www.janelia.org/">
-                  <img
-                    class="ms-2"
-                    src="/file/footer-logo-hhmi"
-                    height="48px"
-                    width="auto"
-                  />
-                </a>
-                <a href="https://2i2c.org/">
-                  <img
-                    class="ms-2"
-                    src="/file/2i2c-blue-logo"
-                    height="48px"
-                    width="auto"
-                  />
-                </a>
-              </div>
-              <div>
-                <small>
-                  <p>
-                    © 2024 CellMap Segmentation Challenge. <br />
-                    This challenge is brought to you by the CellMap Project Team at
-                    HHMI's Janelia Research Campus
-                  </p>
-                </small>
-              </div>
-              <div>
-                <small>
-                  <p>
-                    <a href="mailto:cellmapchallenge@janelia.hhmi.org">Contact Us</a> |
-                    <a href="https://openorganelle.janelia.org/">OpenOrganelle</a>
-                  </p>
-                </small>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <script defer data-domain="cellmapchallenge.janelia.org" src="https://plausible.io/js/script.js"></script>
