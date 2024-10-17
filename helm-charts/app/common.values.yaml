@@ -2,20 +2,53 @@ unnamed:
   ingress:
     enabled: true
     annotations:
-      nginx.ingress.kubernetes.io/proxy-body-size: 256m
+      nginx.ingress.kubernetes.io/proxy-body-size: 1024m
       cert-manager.io/cluster-issuer: letsencrypt-prod
   pvc:
     storageClassName: premium-rwo
+    storage: 10Gi
 
   adminUsers:
     - GeorgianaElena
     - yuvipanda
 
+  extraInitContainers:
+    gcs-pull:
+      name: gcs-pull
+      image: google/cloud-sdk:497.0.0-stable
+      command:
+      - /bin/sh
+      - -c
+      # use printf so we don't interpret the \n in service account keys's private key
+      - |
+        export CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/tmp/gcloud-auth && \
+        printf '%s' "$SERVICE_ACCOUNT_JSON_KEY" > $CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE && \
+        cat $CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE && \
+        mkdir -p /opt/state/truth/ && \
+        gcloud storage rsync --recursive --delete-unmatched-destination-objects \
+          gs://cellmap-challenge-ground-truth-fake/gt.zarr /opt/state/truth/gt.zarr
+      volumeMounts:
+      - name: storage
+        mountPath: /opt/state
+
   yamlSettings:
     overrides:
+      EVALUATOR_DOCKER_IMAGE: us-west2-docker.pkg.dev/segmentation-challenge/cellmap-challenge/evaluator:latest
+      EVALUATOR_DOCKER_CMD:
+        - python
+        - -m
+        - cellmap_segmentation_challenge.evaluate
+        - --truth-path
+        - /opt/gt.zarr
+      EVALUATOR_DOCKER_EXTRA_BINDS:
+        - /opt/state/truth/gt.zarr:/opt/gt.zarr:ro
+      EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 1.5
+      EVALUATOR_DOCKER_AUTH:
+        username: "_json_key"
+        serveraddress: "us-west2-docker.pkg.dev"
       SITE_NAME: CellMap Challenge
-      SITE_LOGO_URL: /file/header-logo
-      SITE_PAGE_HEADER_IMAGE_URL: "/file/home-hero-image"
+      SITE_LOGO_URL: header-logo
+      SITE_PAGE_HEADER_IMAGE_URL: home-hero-image
       SITE_FOOTER_HTML: |-
         <style>
           footer, footer a {
