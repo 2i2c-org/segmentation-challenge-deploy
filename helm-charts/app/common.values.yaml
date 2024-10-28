@@ -33,6 +33,8 @@ frx-challenges:
 
   yamlSettings:
     overrides:
+      # Make sure OAuth2 redirect URI is https, not http
+      ACCOUNT_DEFAULT_HTTP_PROTOCOL: https
       EVALUATOR_DOCKER_IMAGE: us-west2-docker.pkg.dev/segmentation-challenge/cellmap-challenge/evaluator:latest
       EVALUATOR_DOCKER_CMD:
         - python
