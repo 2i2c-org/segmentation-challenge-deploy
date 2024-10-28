@@ -1,14 +1,14 @@
 apiVersion: v2
 name: segmentation-challenge-deploy
-description: Deployment chart for deploying the segmentation challenge
+description: Deployment chart for unnamed
 type: application
 version: 0.1.0
 appVersion: "1.0"
 
 dependencies:
-  - name: frx-challenges
-    version: 0.0.1-0.dev.git.360.h9f2ea2f
-    repository: https://2i2c.org/frx-challenges/
+  - name: unnamed
+    version: 0.0.1-0.dev.git.331.hece6597
+    repository: https://2i2c.org/unnamed-thingity-thing/
   # ingress-nginx for a k8s Ingress resource controller that routes traffic from
   # a single IP entrypoint to various services exposed via k8s Ingress resources
   # that references this controller.

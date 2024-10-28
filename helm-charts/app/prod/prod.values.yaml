@@ -1,4 +1,4 @@
-frx-challenges:
+unnamed:
   resources:
     # Very generous memory requests and limits
     requests:

@@ -1,4 +1,4 @@
-frx-challenges:
+unnamed:
   ingress:
     enabled: true
     annotations:

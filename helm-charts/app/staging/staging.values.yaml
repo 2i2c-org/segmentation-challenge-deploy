@@ -1,4 +1,4 @@
-frx-challenges:
+unnamed:
   ingress:
     hosts:
       - staging.cellmapchallenge.2i2c.cloud
