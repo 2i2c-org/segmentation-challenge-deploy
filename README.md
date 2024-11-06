@@ -1,6 +1,6 @@
 # segmentation-challenge-deploy
 
-This repository contains the code to deploy the https://2i2c.org/unnamed-thingity-thing/ chart for the segmentation challenge.
+This repository contains the code to deploy the [2i2c FRX Challenges](https://2i2c.org/frx-challenges) [helm chart](https://2i2c.org/frx-challenges-helm-chart) for the segmentation challenge.
 
 ## Installation
 
