@@ -48,6 +48,19 @@ frx-challenges:
       EVALUATOR_DOCKER_AUTH:
         username: "_json_key"
         serveraddress: "us-west2-docker.pkg.dev"
+      EVALUATION_DISPLAY_CONFIG:
+        - result_key: overall_semantic_score
+          display_name: Semantic Score
+          ordering: descending
+          ordering_priority: 3
+        - result_key: overall_instance_score
+          display_name: Instance Score
+          ordering: descending
+          ordering_priority: 2
+        - result_key: overall_score
+          display_name: Score
+          ordering: descending
+          ordering_priority: 1
       SITE_NAME: CellMap Challenge
       SITE_LOGO_URL: header-logo
       SITE_PAGE_HEADER_IMAGE_URL: home-hero-image
