@@ -35,7 +35,8 @@ frx-challenges:
     overrides:
       # Make sure OAuth2 redirect URI is https, not http
       ACCOUNT_DEFAULT_HTTP_PROTOCOL: https
-      EVALUATOR_DOCKER_IMAGE: us-west2-docker.pkg.dev/segmentation-challenge/cellmap-challenge/evaluator:latest
+      # Image is built from https://github.com/janelia-cellmap/cellmap-segmentation-challenge
+      EVALUATOR_DOCKER_IMAGE: quay.io/2i2c/cellmap-segmentation-challenge-evaluator:a20d01747cc5
       EVALUATOR_DOCKER_CMD:
         - python
         - -m
@@ -45,9 +46,6 @@ frx-challenges:
       EVALUATOR_DOCKER_EXTRA_BINDS:
         - /opt/state/truth/gt.zarr:/opt/gt.zarr:ro
       EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 1.5
-      EVALUATOR_DOCKER_AUTH:
-        username: "_json_key"
-        serveraddress: "us-west2-docker.pkg.dev"
       EVALUATION_DISPLAY_CONFIG:
         - result_key: overall_semantic_score
           display_name: Semantic Score
