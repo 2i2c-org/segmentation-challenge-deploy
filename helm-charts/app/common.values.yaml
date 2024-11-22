@@ -11,6 +11,7 @@ frx-challenges:
   adminUsers:
     - GeorgianaElena
     - yuvipanda
+    - rhoadesScholar
 
   extraInitContainers:
     gcs-pull:
