@@ -65,6 +65,56 @@ frx-challenges:
           display_name: Score
           ordering: descending
           ordering_priority: 1
+      SITE_LEADERBOARD_DESCRIPTION: >
+        The leaderboard is sorted by the overall score of all test images, which accounts for the overall instance score and semantic score. The higher the overall score, the better the segmentation result.
+      SITE_SUBMISSION_INSTRUCTIONS_MARKDOWN: >
+        We welcome your submission to the CellMap Segmentation Challenge! Please ensure all required fields are completed and that you upload your algorithm outputs in the requested format. For any technical issues or questions, [reach out to our support team](mailto:cellmapchallenge@janelia.hhmi.org).
+      SITE_SUBMISSION_TOC_LABEL: |-
+        I agree to the Terms and Conditions as described below.
+
+        **Terms and Conditions**
+
+        By participating in the CellMap Segmentation Challenge, you agree to the following terms:
+
+        1. Creative Commons License (CC BY 4.0): Your submission will be made available under the Creative Commons Attribution 4.0 International (CC BY 4.0) license. This means that others may share, copy, adapt, and build upon your submission, even commercially, as long as they give appropriate credit to the original creator, provide a link to the license, and indicate if changes were made. You retain copyright ownership, but you grant a non-exclusive, worldwide, royalty-free license for others to use, subject to the CC BY 4.0 terms.
+        2. Attribution: The CellMap Project and HHMI will ensure proper attribution of your submission according to the terms of CC BY 4.0, crediting you as the creator. Please cite the CellMap Segmentation Challenge 2024 DOI collection: 10.25378/janelia.c.7456966.
+        3. Originality: Your submission must be original work and must not infringe on any third-party intellectual property rights. You are responsible for ensuring that any incorporated materials are either your own or appropriately licensed for use under CC BY 4.0.
+        4. Nonprofit Use: As part of HHMI's nonprofit mission, submissions may be used for research, educational, and outreach purposes. Your contribution will help advance scientific research in a manner consistent with HHMI's nonprofit status.
+        5. Use of Name and Affiliation: You consent to the use of your name, affiliation, and submission details for promotional and educational purposes related to the CellMap Segmentation Challenge.
+        6. Modifications to the Challenge: The CellMap Project Team reserves the right to modify or cancel the challenge at any time. Any changes will be communicated to participants in a timely manner.
+      SITE_SUBMISSION_FORM_SCHEMA:
+        type: object
+        properties:
+          name:
+            type: "string"
+            title: "Submission owner"
+            helpText: "Your full name."
+            format: "string"
+          email:
+            type: "string"
+            title: "Email Address"
+            format: "email"
+          institution:
+            type: "string"
+            title: "Institution"
+            format: "string"
+          team:
+            type: "string"
+            title: "Team Name"
+            helpText: "Choose a team name for your submission."
+            required: true
+            leaderboard_display: true
+          open_source:
+            type: "string"
+            title: "Open source?"
+            choices: ["Yes", "No"]
+            format: "string"
+            widget: "radio"
+          repo:
+            type: "string"
+            title: "Repository"
+            helpText: "If 'Yes' selected, link to public open source repository."
+            format: "uri"
       SITE_NAME: CellMap Challenge
       SITE_LOGO_URL: header-logo
       SITE_PAGE_HEADER_IMAGE_URL: home-hero-image
