@@ -21,13 +21,15 @@ frx-challenges:
         - /bin/sh
         - -c
         # use printf so we don't interpret the \n in service account keys's private key
+        # Delete empty directories, since `gcloud storage rsync` with `--delete-unmatched-destination-objects`
+        # does not seem to actually delete directories created, only the leaf objects (sometimes).
         - |
           export CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/tmp/gcloud-auth && \
           printf '%s' "$SERVICE_ACCOUNT_JSON_KEY" > $CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE && \
-          cat $CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE && \
           mkdir -p /opt/state/truth/ && \
           gcloud storage rsync --recursive --delete-unmatched-destination-objects \
-            gs://cellmap-challenge-ground-truth-fake/gt.zarr /opt/state/truth/gt.zarr
+            gs://cellmap-challenge-ground-truth-fake/gt.zarr /opt/state/truth/gt.zarr && \
+          find /opt/state/truth/ -type d -empty -delete
       volumeMounts:
         - name: storage
           mountPath: /opt/state
