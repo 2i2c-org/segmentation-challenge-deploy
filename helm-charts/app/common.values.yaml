@@ -66,19 +66,38 @@ frx-challenges:
           ordering: descending
           ordering_priority: 1
       SITE_SUBMISSION_FORM_SCHEMA:
-          type: object
-          properties:
-              repo:
-                  type: "string"
-                  title: "Repository"
-                  helpText: "Link to repository containing source of this model (if public)"
-                  format: "uri"
-              institution:
-                type: "string"
-                title: "Institution"
-              team:
-                type: "string"
-                title: "Team Name"
+        type: object
+        properties:
+          name:
+            type: "string"
+            title: "Submission owner"
+            helpText: "Your full name."
+            format: "string"
+          email:
+            type: "string"
+            title: "Email Address"
+            format: "email"
+          institution:
+            type: "string"
+            title: "Institution"
+            format: "string"
+          team:
+            type: "string"
+            title: "Team Name"
+            helpText: "Choose a team name for your submission."
+            required: true
+            leaderboard_display: true
+          open_source:
+            type: "string"
+            title: "Open source?"
+            choices: ["Yes", "No"]
+            format: "string"
+            widget: "radio"
+          repo:
+            type: "string"
+            title: "Repository"
+            helpText: "If 'Yes' selected, link to public open source repository."
+            format: "uri"
       SITE_NAME: CellMap Challenge
       SITE_LOGO_URL: header-logo
       SITE_PAGE_HEADER_IMAGE_URL: home-hero-image
