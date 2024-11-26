@@ -65,6 +65,20 @@ frx-challenges:
           display_name: Score
           ordering: descending
           ordering_priority: 1
+      SITE_SUBMISSION_FORM_SCHEMA:
+          type: object
+          properties:
+              repo:
+                  type: "string"
+                  title: "Repository"
+                  helpText: "Link to repository containing source of this model (if public)"
+                  format: "uri"
+              institution:
+                type: "string"
+                title: "Institution"
+              team:
+                type: "string"
+                title: "Team Name"
       SITE_NAME: CellMap Challenge
       SITE_LOGO_URL: header-logo
       SITE_PAGE_HEADER_IMAGE_URL: home-hero-image
