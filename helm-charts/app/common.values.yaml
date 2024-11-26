@@ -41,11 +41,14 @@ frx-challenges:
       # Image is built from https://github.com/janelia-cellmap/cellmap-segmentation-challenge
       EVALUATOR_DOCKER_IMAGE: quay.io/2i2c/cellmap-segmentation-challenge-evaluator:797a892d742d
       EVALUATOR_DOCKER_CMD:
-        - python
-        - -m
-        - cellmap_segmentation_challenge.evaluate
-        - --truth-path
-        - /opt/gt.zarr
+        - 'csc'
+        - 'evaluate'
+        - '--truth_path'
+        - '/opt/gt.zarr'
+        - '--submission_path'
+        - '{submission_path}'
+        - '--result_file'
+        - '{result_path}'
       EVALUATOR_DOCKER_EXTRA_BINDS:
         - /opt/state/truth/gt.zarr:/opt/gt.zarr:ro
       EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 1.5
