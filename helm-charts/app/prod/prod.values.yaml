@@ -33,7 +33,8 @@ frx-challenges:
       CSRF_TRUSTED_ORIGINS:
         - https://cellmapchallenge.2i2c.cloud
         - https://cellmapchallenge.janelia.org
-      DEBUG: True
+      # Disable debug mode for prod instance
+      DEBUG: False
       SOCIALACCOUNT_PROVIDERS:
         github:
           APP:
