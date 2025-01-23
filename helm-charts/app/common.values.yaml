@@ -68,7 +68,12 @@ frx-challenges:
       SITE_LEADERBOARD_DESCRIPTION: >
         The leaderboard is sorted by the overall score of all test images, which accounts for the overall instance score and semantic score. The higher the overall score, the better the segmentation result.
       SITE_SUBMISSION_INSTRUCTIONS_MARKDOWN: >
-        We welcome your submission to the CellMap Segmentation Challenge! Please ensure all required fields are completed and that you upload your algorithm outputs in the requested format. For any technical issues or questions, [reach out to our support team](mailto:cellmapchallenge@janelia.hhmi.org).
+        We welcome your submission to the CellMap Segmentation Challenge! Before submitting, ensure all required fields are completed and that your algorithm outputs follow the guidelines in the [challenge documentation](https://janelia-cellmap.github.io/cellmap-segmentation-challenge/).
+        Helpful Links:
+        - [Submission Data Format](https://janelia-cellmap.github.io/cellmap-segmentation-challenge/submission_data_format.html) - Learn the required format for your submission files.
+        - [Evaluation Criteria](https://janelia-cellmap.github.io/cellmap-segmentation-challenge/evaluation.html) - Understand how your submission will be assessed.
+        - [Evaluation Resampling](https://janelia-cellmap.github.io/cellmap-segmentation-challenge/evaluation_resampling.html) - Details on how resampling is handled during evaluation.
+        For any technical issues or questions, [reach out to our support team](mailto:cellmapchallenge@janelia.hhmi.org).
       SITE_SUBMISSION_TOC_LABEL: |-
         I agree to the Terms and Conditions as described below.
 
