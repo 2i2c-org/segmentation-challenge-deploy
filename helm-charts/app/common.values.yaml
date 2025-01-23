@@ -28,7 +28,7 @@ frx-challenges:
           printf '%s' "$SERVICE_ACCOUNT_JSON_KEY" > $CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE && \
           mkdir -p /opt/state/truth/ && \
           gcloud storage rsync --recursive --delete-unmatched-destination-objects \
-            gs://cellmap-challenge-ground-truth-fake/gt.zarr /opt/state/truth/gt.zarr && \
+            gs://cellmap-challenge-ground-truth-fake/ground_truth.zarr /opt/state/truth/ground_truth.zarr && \
           find /opt/state/truth/ -type d -empty -delete
       volumeMounts:
         - name: storage
@@ -39,18 +39,18 @@ frx-challenges:
       # Make sure OAuth2 redirect URI is https, not http
       ACCOUNT_DEFAULT_HTTP_PROTOCOL: https
       # Image is built from https://github.com/janelia-cellmap/cellmap-segmentation-challenge
-      EVALUATOR_DOCKER_IMAGE: quay.io/2i2c/cellmap-segmentation-challenge-evaluator:b1535aa891fa
+      EVALUATOR_DOCKER_IMAGE: quay.io/2i2c/cellmap-segmentation-challenge-evaluator:5e4d09cc4870
       EVALUATOR_DOCKER_CMD:
         - "csc"
         - "evaluate"
         - "--truth_path"
-        - "/opt/gt.zarr"
+        - "/opt/ground_truth.zarr"
         - "--submission_path"
         - "{submission_path}"
         - "--result_file"
         - "{result_path}"
       EVALUATOR_DOCKER_EXTRA_BINDS:
-        - /opt/state/truth/gt.zarr:/opt/gt.zarr:ro
+        - /opt/state/truth/ground_truth.zarr:/opt/ground_truth.zarr:ro
       EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 1.5
       EVALUATION_DISPLAY_CONFIG:
         - result_key: overall_semantic_score
