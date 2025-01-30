@@ -69,6 +69,7 @@ frx-challenges:
         The leaderboard is sorted by the overall score of all test images, which accounts for the overall instance score and semantic score. The higher the overall score, the better the segmentation result.
       SITE_SUBMISSION_INSTRUCTIONS_MARKDOWN: |-
         We welcome your submission to the CellMap Segmentation Challenge! Before submitting, ensure all required fields are completed and that your algorithm outputs follow the guidelines in the [challenge documentation](https://janelia-cellmap.github.io/cellmap-segmentation-challenge/).
+
         Helpful Links:
         - [Submission Data Format](https://janelia-cellmap.github.io/cellmap-segmentation-challenge/submission_data_format.html) - Learn the required format for your submission files.
         - [Evaluation Criteria](https://janelia-cellmap.github.io/cellmap-segmentation-challenge/evaluation.html) - Understand how your submission will be assessed.
