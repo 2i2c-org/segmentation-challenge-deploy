@@ -79,14 +79,55 @@ frx-challenges:
 
         **Terms and Conditions**
 
-        By participating in the CellMap Segmentation Challenge, you agree to the following terms:
+        The CellMap Segmentation Challenge offers you the opportunity to push the 
+        boundaries of AI-driven biological image analysis by developing segmentation 
+        models for a richly detailed collection of electron microscopy datasets.
+        Participating in the CellMap Segmentation Challenge in any capacity requires 
+        accessing and using the OpenOrganelle data repository (the “OpenOrganelle 
+        Repository”) maintained by the Janelia Research Campus of the Howard Hughes 
+        Medical Institute (“HHMI” or “we” or “us” or “our(s)”). By accessing or using the 
+        OpenOrganelle Repository or any data and information made available on or 
+        through the OpenOrganelle Repository, you agree to the [OpenOrganelle Terms of 
+        Use](https://www.openorganelle.org/terms_of_use).
 
-        1. Creative Commons License (CC BY 4.0): Your submission will be made available under the Creative Commons Attribution 4.0 International (CC BY 4.0) license. This means that others may share, copy, adapt, and build upon your submission, even commercially, as long as they give appropriate credit to the original creator, provide a link to the license, and indicate if changes were made. You retain copyright ownership, but you grant a non-exclusive, worldwide, royalty-free license for others to use, subject to the CC BY 4.0 terms.
-        2. Attribution: The CellMap Project and HHMI will ensure proper attribution of your submission according to the terms of CC BY 4.0, crediting you as the creator. Please cite the CellMap Segmentation Challenge 2024 DOI collection: 10.25378/janelia.c.7456966.
-        3. Originality: Your submission must be original work and must not infringe on any third-party intellectual property rights. You are responsible for ensuring that any incorporated materials are either your own or appropriately licensed for use under CC BY 4.0.
-        4. Nonprofit Use: As part of HHMI's nonprofit mission, submissions may be used for research, educational, and outreach purposes. Your contribution will help advance scientific research in a manner consistent with HHMI's nonprofit status.
-        5. Use of Name and Affiliation: You consent to the use of your name, affiliation, and submission details for promotional and educational purposes related to the CellMap Segmentation Challenge.
-        6. Modifications to the Challenge: The CellMap Project Team reserves the right to modify or cancel the challenge at any time. Any changes will be communicated to participants in a timely manner.
+        Please read these CellMap Segmentation Challenge Terms of Participation 
+        carefully. By competing in, and seeking to win, the CellMap Segmentation 
+        Challenge, you agree to these CellMap Segmentation Challenge Terms of 
+        Participation. If you do not agree to these CellMap Segmentation Challenge Terms 
+        of Participation, you may not submit to us any visualization predictions or related 
+        data and other information for a dataset obtained from the OpenOrganelle 
+        Repository and you may not participate in the CellMap Segmentation Challenge.
+        When you submit your visualization prediction(s) (“Predictions”) and related data, 
+        including but not limited to metadata and other information (“Data”) for one or 
+        more high-resolution electron microscopy datasets obtained from the 
+        OpenOrganelle Repository by uploading them through the [CellMap Segmentation 
+        Challenge online submission portal](https://cellmapchallenge.janelia.org/submissions/), you:
+
+        - represent, warrant, and covenant that (a) you either own the Predictions 
+        and the Data or have appropriate licenses or permissions necessary for the 
+        Predictions and the Data to be made available to us; (b) the Predictions and 
+        the Data do not, and the use thereof by us will not, infringe, misappropriate,
+        or otherwise violate the intellectual property rights of any other person; and
+        (c) the Predictions and the Data comply with all applicable laws, rules, and 
+        regulations;
+        - grant to HHMI and its contractors an irrevocable, non-exclusive, world-
+        wide, royalty-free, sub-licensable, perpetual license (i) to all such 
+        Predictions and Data under the terms of the CC BY 4.0 license; and (ii) to 
+        use, store, make derivative works of, reproduce, publish, display and 
+        distribute any and all such Predictions and Data, in all cases for HHMI's 
+        internal research purposes; and
+        - understand and agree that (A) you may be entered as a competitor in, and 
+        potential winner of, the CellMap Segmentation Challenge; and (B) 
+        information about you and the Predictions and Data you submit, including 
+        but not limited to your name(s), your submission name(s), your GitHub 
+        repository(ies), and your GitHub profile picture(s), may appear on and in the
+        Cellmap Segmentation Challenge website(s) and related repository(ies) 
+        (collectively, the “Cellmap Segmentation Challenge Sites”), including but 
+        not limited to the leaderboard section thereof.
+
+        *Note:* Upon completion of the CellMap Segmentation Challenge, we may be back 
+        in contact to request permission to share the Prediction and the Data outside 
+        HHMI.
       SITE_SUBMISSION_FORM_SCHEMA:
         type: object
         properties:
