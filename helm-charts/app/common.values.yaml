@@ -8,6 +8,10 @@ frx-challenges:
     storageClassName: premium-rwo
     storage: 10Gi
 
+  dind:
+    pvc:
+      storageClassName: premium-rwo
+
   adminUsers:
     - GeorgianaElena
     - yuvipanda
@@ -39,7 +43,7 @@ frx-challenges:
       # Make sure OAuth2 redirect URI is https, not http
       ACCOUNT_DEFAULT_HTTP_PROTOCOL: https
       # Image is built from https://github.com/janelia-cellmap/cellmap-segmentation-challenge
-      EVALUATOR_DOCKER_IMAGE: quay.io/2i2c/cellmap-segmentation-challenge-evaluator:5e4d09cc4870
+      EVALUATOR_DOCKER_IMAGE: quay.io/2i2c/cellmap-segmentation-challenge-evaluator:f70f7f5051aa
       EVALUATOR_DOCKER_CMD:
         - "csc"
         - "evaluate"

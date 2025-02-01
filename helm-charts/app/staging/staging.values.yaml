@@ -11,11 +11,11 @@ frx-challenges:
       # Guarantee 32G of RAM and 6 CPUs
       # this is where all our actual evaluations run
       requests:
-        memory: 32Gi
-        cpu: 6
+        memory: 300Gi
+        cpu: 40
       limits:
-        memory: 32Gi
-        cpu: 6
+        memory: 320Gi
+        cpu: 42
 
   evaluator:
     resources:
@@ -32,9 +32,13 @@ frx-challenges:
       CSRF_TRUSTED_ORIGINS:
         - https://staging.cellmapchallenge.2i2c.cloud
       DEBUG: True
-      EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 2
-      # Set this to 24G now to see how much it actually gets to
-      EVALUATOR_DOCKER_CONTAINER_MEMORY_LIMIT: 25769803776
+      EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 40
+      # Set this to 300G now to see how much it actually gets to
+      EVALUATOR_DOCKER_CONTAINER_MEMORY_LIMIT: 375809638400
+      EVALUATOR_DOCKER_CONTAINER_ENV:
+        MAX_MAIN_THREADS: "8"
+        MAX_LABEL_THREADS: "8"
+        MAX_INSTANCE_THREADS: "8"
       SOCIALACCOUNT_PROVIDERS:
         github:
           APP:

@@ -7,7 +7,7 @@ appVersion: "1.0"
 
 dependencies:
   - name: frx-challenges
-    version: 0.0.1-0.dev.git.513.hf8578c2
+    version: 0.0.1-0.dev.git.525.h16535ff
     repository: https://2i2c.org/frx-challenges-helm-chart/
   # ingress-nginx for a k8s Ingress resource controller that routes traffic from
   # a single IP entrypoint to various services exposed via k8s Ingress resources
