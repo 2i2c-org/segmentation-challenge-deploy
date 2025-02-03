@@ -8,9 +8,26 @@ frx-challenges:
     storageClassName: premium-rwo
     storage: 10Gi
 
+  evaluator:
+    resources:
+      requests:
+        memory: 2Gi
+        cpu: 0.5
+      limits:
+        memory: 4Gi
+        cpu: 1
   dind:
     pvc:
       storageClassName: premium-rwo
+    resources:
+      # Guarantee 32G of RAM and 6 CPUs
+      # this is where all our actual evaluations run
+      requests:
+        memory: 300Gi
+        cpu: 40
+      limits:
+        memory: 320Gi
+        cpu: 42
 
   adminUsers:
     - GeorgianaElena
@@ -55,7 +72,13 @@ frx-challenges:
         - "{result_path}"
       EVALUATOR_DOCKER_EXTRA_BINDS:
         - /opt/state/truth/ground_truth.zarr:/opt/ground_truth.zarr:ro
-      EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 1.5
+      EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 40
+      # Set this to 300G now to see how much it actually gets to
+      EVALUATOR_DOCKER_CONTAINER_MEMORY_LIMIT: 375809638400
+      EVALUATOR_DOCKER_CONTAINER_ENV:
+        MAX_MAIN_THREADS: "8"
+        MAX_LABEL_THREADS: "8"
+        MAX_INSTANCE_THREADS: "8"
       EVALUATION_DISPLAY_CONFIG:
         - result_key: overall_semantic_score
           display_name: Semantic Score
