@@ -15,6 +15,8 @@ frx-challenges:
       limits:
         memory: 1Gi
         cpu: 2
+  pvc:
+    storage: 50Gi
   ingress:
     hosts:
       - cellmapchallenge.2i2c.cloud
@@ -41,4 +43,4 @@ frx-challenges:
             client_id: Ov23liSODletCDyM8sa8
             redirect_uri: https://cellmapchallenge.janelia.org/accounts/github/login/callback/
           VERIFIED_EMAIL: True
-      CHALLENGE_STATE: "NOT_STARTED"
+      CHALLENGE_STATE: "RUNNING"
