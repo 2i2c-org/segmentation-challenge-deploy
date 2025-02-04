@@ -16,10 +16,6 @@ frx-challenges:
       EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 40
       # Set this to 300G now to see how much it actually gets to
       EVALUATOR_DOCKER_CONTAINER_MEMORY_LIMIT: 375809638400
-      EVALUATOR_DOCKER_CONTAINER_ENV:
-        MAX_MAIN_THREADS: "8"
-        MAX_LABEL_THREADS: "8"
-        MAX_INSTANCE_THREADS: "8"
       SOCIALACCOUNT_PROVIDERS:
         github:
           APP:

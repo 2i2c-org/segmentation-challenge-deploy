@@ -76,9 +76,11 @@ frx-challenges:
       # Set this to 300G now to see how much it actually gets to
       EVALUATOR_DOCKER_CONTAINER_MEMORY_LIMIT: 375809638400
       EVALUATOR_DOCKER_CONTAINER_ENV:
-        MAX_MAIN_THREADS: "8"
-        MAX_LABEL_THREADS: "8"
-        MAX_INSTANCE_THREADS: "8"
+        MAX_MAIN_THREADS: "2"
+        MAX_LABEL_THREADS: "2"
+        MAX_INSTANCE_THREADS: "2"
+        # 512 MB
+        PRECOMPUTE_LIMIT: 536870912
       EVALUATION_DISPLAY_CONFIG:
         - result_key: overall_semantic_score
           display_name: Semantic Score
