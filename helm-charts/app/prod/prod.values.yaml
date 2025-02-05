@@ -1,6 +1,5 @@
 frx-challenges:
   resources:
-    # Very generous memory requests and limits
     requests:
       memory: 2Gi
       cpu: 1
