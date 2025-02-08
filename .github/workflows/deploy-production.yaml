@@ -7,7 +7,7 @@ on:
     paths:
       - helm-charts/app/Chart.yaml
       - helm-charts/app/common.values.yaml
-      - helm-charts/app/prod.values.yaml
+      - helm-charts/app/prod/prod.values.yaml
   workflow_dispatch:
 
 jobs:

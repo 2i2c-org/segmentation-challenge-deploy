@@ -76,6 +76,8 @@ frx-challenges:
       # Set this to 100G now to see how much it actually gets to
       EVALUATOR_DOCKER_CONTAINER_MEMORY_LIMIT: 107374182400
       EVALUATOR_DOCKER_CONTAINER_ENV:
+        # 4 knobs we have to tune the evaluator resource usage
+        # and performance
         MAX_MAIN_THREADS: "1"
         MAX_LABEL_THREADS: "2"
         MAX_INSTANCE_THREADS: "2"
