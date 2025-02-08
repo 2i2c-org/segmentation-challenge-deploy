@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - helm-charts/app/Chart.yaml
+      - helm-charts/apps/common.values.yaml
       - helm-charts/apps/staging.values.yaml
   workflow_dispatch:
 
