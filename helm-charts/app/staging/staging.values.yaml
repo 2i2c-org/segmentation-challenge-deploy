@@ -13,9 +13,6 @@ frx-challenges:
       CSRF_TRUSTED_ORIGINS:
         - https://staging.cellmapchallenge.2i2c.cloud
       DEBUG: True
-      EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 40
-      # Set this to 300G now to see how much it actually gets to
-      EVALUATOR_DOCKER_CONTAINER_MEMORY_LIMIT: 375809638400
       SOCIALACCOUNT_PROVIDERS:
         github:
           APP:

@@ -6,8 +6,8 @@ on:
       - main
     paths:
       - helm-charts/app/Chart.yaml
-      - helm-charts/apps/common.values.yaml
-      - helm-charts/apps/prod.values.yaml
+      - helm-charts/app/common.values.yaml
+      - helm-charts/app/prod.values.yaml
   workflow_dispatch:
 
 jobs:
