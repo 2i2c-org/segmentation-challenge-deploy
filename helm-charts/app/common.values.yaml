@@ -23,11 +23,11 @@ frx-challenges:
       # Guarantee 32G of RAM and 6 CPUs
       # this is where all our actual evaluations run
       requests:
-        memory: 300Gi
-        cpu: 40
+        memory: 100Gi
+        cpu: 10
       limits:
-        memory: 320Gi
-        cpu: 42
+        memory: 100Gi
+        cpu: 10
 
   adminUsers:
     - GeorgianaElena
@@ -72,15 +72,15 @@ frx-challenges:
         - "{result_path}"
       EVALUATOR_DOCKER_EXTRA_BINDS:
         - /opt/state/truth/ground_truth.zarr:/opt/ground_truth.zarr:ro
-      EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 40
-      # Set this to 300G now to see how much it actually gets to
-      EVALUATOR_DOCKER_CONTAINER_MEMORY_LIMIT: 375809638400
+      EVALUATOR_DOCKER_CONTAINER_CPU_LIMIT: 10
+      # Set this to 100G now to see how much it actually gets to
+      EVALUATOR_DOCKER_CONTAINER_MEMORY_LIMIT: 107374182400
       EVALUATOR_DOCKER_CONTAINER_ENV:
-        MAX_MAIN_THREADS: "2"
+        MAX_MAIN_THREADS: "1"
         MAX_LABEL_THREADS: "2"
         MAX_INSTANCE_THREADS: "2"
-        # 512 MB
-        PRECOMPUTE_LIMIT: 536870912
+        # 256 MB
+        PRECOMPUTE_LIMIT: 268435456
       EVALUATION_DISPLAY_CONFIG:
         - result_key: overall_semantic_score
           display_name: Semantic Score
